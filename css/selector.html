@@ -1,0 +1,103 @@
+<!DOCTYPE html5>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>cssPractice1</title>
+        <style>
+            /* css语法 */
+
+            p{
+                color: blue;
+                font-size: 60;
+            }
+            /* p的作用就是选中页面中所有p标签 */
+
+            /* 选择器：
+                1. 元素选择器
+                使用标签名选中指定元素
+                标签名{}
+                弊端：会改变所有该标签
+                
+                2.id选择器
+                使用id选中元素
+                #id名{} 
+                弊端：id不能重复
+                
+                3.class选择器
+                class与id类似，不同的是class可以重复使用
+                .class名{}
+
+                4.通配选择器
+                选中全部元素
+                *{}
+
+                5.并集选择器
+                a或者b
+                a, b{}
+
+                6.交集选择器
+                a并且b
+                a.b{}
+
+                7.子元素选择器(子元素只指直接包含)
+                div > span{}    选择在div中的span标签
+                div > p > span{}  选择div中的p的span
+                eg. div.box > span{}    带有box class的div标签中的span
+
+                8. 后代元素选择器
+                选中指定元素内的指定后代元素
+                div span{}
+
+                9. 选择下一个兄弟元素
+                p + span{} 选择p后的那个span标签
+
+                10. 属性选择器
+                p[title]{} 选择有title属性的p标签
+                p[属性名=属性值] 指定属性为该属性值
+                p[属性名^=属性值] 以某属性值开头
+                p[属性名$=属性值] 以某属性值结尾
+                p[属性名*=属性值] 含有该属性值
+
+                11.伪类选择器
+                快速生成：ul>li*5
+                ul > li.first{
+                    color: red;
+                } ul中第一个li，且li要有class = “first”变红
+
+                伪类：描述一个元素的特殊状态，eg第一个子元素，被点击的元素等
+                    一般情况下用：开头 eg :first-child
+                    ul > li:first-child{
+                    color: red;
+                    ul > li:first-of-type{
+                    color: red;
+                    ul > li:nth-child(3){
+                    color: red;
+                    ul > li:nth-child(n){
+                    color: red; 选中所有
+                    ul > li:nth-child(odd/even){
+                    color: red; 选中奇数/偶数位
+
+                    ul > li:not(:nth-child(3)){} 除了第三个的li
+                } 
+
+                伪元素：特殊的、并不真实存在的元素，使用：：开头
+                    ::first-letter 表示第一个字母
+                    p::first-letter p标签后的第一个字母
+                    p::first-line 第一行
+                    p::selection 选中的内容
+            */
+            .red{color: red;}
+            .font30{
+                font-size: 30;
+
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!-- 用css修改样式
+            第一种方法(行内样式）：通过标签内部style属性修改，style后为css语法 -->
+        <p class    ="red font30">this is a test</p>
+        <p>this is a test</p>
+    </body>
+</html>
