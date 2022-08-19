@@ -1,0 +1,107 @@
+<!DOCTYPE html5>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>cssPractice1</title>
+        <style>
+            .outer{
+                width: 800px;
+                height: 220px;
+                border: 10px green solid;
+            }
+            .box1{
+                width: auto;
+                height: 200px;
+                background-color: #bfa;
+                border: 10px red solid;
+                 /* 外边距margin
+                不会影响盒子的大小，但会影响盒子的位置
+                四个方向的外边距：margin-top元素下移, margin-right, margin-bottom, margin-left元素右移动
+                right和bottom会移动其他元素 
+                margin可正可负，负值往相反方向移动，两个元素之间会覆盖
+                
+                margin的简写属性：和padding一样
+                margin会影响到盒子实际占用空间*/
+                margin-bottom: 0px;
+
+                margin-right: 0px;
+                margin-left : 200px;
+                /* 元素的水平方向布局：
+                由以下几个元素共同决定：
+                    margin-left
+                    border-left
+                    padding-left
+                    width
+                    padding-right
+                    border-right
+                    margin-right
+                    
+                一个元素在父元素中，水平布局必须满足以下等式：
+                    margin-left + border-left
+                    + padding-left
+                    + width
+                    + padding-right
+                    + border-right
+                    + margin-right 
+                    = 父元素内容区的宽度（必须满足）
+                    如果不满足，等式会自动调整
+                        - 如果七个值没有auto，浏览器自动调整margin-right，这个时候，即使指定了margin-right也没有用
+                        - 宽度如果能最大，就最大
+                    margin可以是负数
+                    */
+           }
+           
+
+           .box2{
+               width: 220px;
+               height: 220px;
+               background-color: aqua;
+           }
+
+           .box3{
+               background-color: #bfa;
+               height: 200px;
+               overflow: scroll; 
+               /* hidden, visible, scroll(two scroller) 
+                auto 根据需要生成滚动条
+                overflow-x
+                overflow-y*/
+           }
+
+           .box4{
+               width: 100px;
+               background-color: yellow;
+               /* 如果子元素height大于父元素height，会溢出父元素
+               使用父元素中的overflow来处理 */
+               height: 300px;
+               
+
+               /* 父元素的高度会被margin-bottom撑开 */
+               margin-bottom: 100px;
+           }
+
+           /* 外边距的折叠 
+           垂直的相邻margin会发生重叠（margin-bottom和margin-top)
+           - 兄弟元素：两者之间取较大的
+           - 父子元素： 子元素的margin-top会传递给父元素
+                解决方法：1. 使用padding-top，这样就可以不传递
+                        2. 给父元素加boarder，将两个元素隔开*/
+                
+           
+        </style>
+    </head>
+    
+    <body>
+        <div class="outer">
+            <div class = "box1"></div>
+        </div>
+        <div class = "box2"></div>
+        <div class="box3">
+            <div class = "box4"></div>
+        </div>
+        <div class="box3">
+            <div class = "box4"></div>
+        </div>
+
+    </body>
+</html>
