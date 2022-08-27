@@ -1,0 +1,50 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+
+#middle {
+    background-color: #81b29a;
+}
+
+#static #middle {
+    position: static;
+    top: 100px;
+    /* with the "static" position, the top, left, bottom and so on have no effect */
+}
+
+#relative #middle {
+    position: relative;
+    top: 50px;
+    /* it will move 50px down relative to where it normally should be */
+    left: 50px;
+    /* move 50px rightward */
+
+}
+
+#absolute {
+    position: relative;
+}
+
+#absolute #middle {
+    position: absolute;
+    /* the element will not take any spaces, remove out from the flow, it will overlap with next element */
+    top: 1px;
+    left: 1px;
+    /* its position depends on the position of its parent */
+}
+
+#fixed #middle {
+    position: fixed;
+    /* fixed position is relating to the position of its container. Although you rolling down, it will stick there */
+    top: 0;
+    left: 400px;
+}
+
+/* position:stick 
+    it will not stick on the page, until it is rolled on the top of the page*/

@@ -1,0 +1,48 @@
+.circle {
+    width: 300px;
+    height: 300px;
+    background-color: magenta;
+    transition: background-color 1s ease-in, border-radius 2s ease-in 4s;
+    /* transition set the time needed for hover transition 
+    "border-radius 2s 4s" means transition happens during 2s, before that, it will delay 4s
+    the returning pcroess(after mouse move out) still has 4s delay*/
+}
+
+.circle:hover {
+    /* The :hover selector is used to select elements when you mouse over them. */
+    background-color: cyan;
+    border-radius: 50%;
+    /* border-radius defines the radis of the element's corner, it will be a circle by "border-radius: 50%;"
+    the difference in different border percentage could be seen by "    border-top-right-radius: 100%;" */
+}
+
+
+ section div {
+     /* selector: for the div elements which in the section */
+    height: 100px;
+    width: 100px;
+    background-color: turquoise;
+    margin: 20px 0;
+    transition: margin-left 3s;
+} 
+
+section:hover div {
+    margin-left:500px;
+}
+
+div:nth-of-type(1){
+    transition-timing-function: ease-in;
+}
+div:nth-of-type(2){
+    transition-timing-function: ease-out;
+}
+div:nth-of-type(3){
+    transition-timing-function: cubic-bezier(0.7, 0, 0.84, 0);
+}
+div:nth-of-type(4){
+    transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
+} 
+
+/* transition timing function:https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function 
+ the div will move with same length of time, but different ways*/
+
