@@ -36,3 +36,22 @@ h1 {
 div:nth-of-type(5){
     align-self: center;
 }
+
+main{
+    width: 80%;
+    margin: auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+
+main .sidebar{
+    background-color: blueviolet;
+    border: 2px solid white;
+    flex: 300px;
+}
+
+main .maincontent{
+    background-color: aqua;
+    flex: 600px;
+}
